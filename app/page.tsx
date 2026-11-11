@@ -1,19 +1,34 @@
-import { Button } from "@/components/ui/button"
+import { About } from "@/components/site/about"
+import { Conditions } from "@/components/site/conditions"
+import { Contact } from "@/components/site/contact"
+import { Fleet } from "@/components/site/fleet"
+import { Hero } from "@/components/site/hero"
+import { Marquee } from "@/components/site/marquee"
+import { Packages } from "@/components/site/packages"
+import { Pilot } from "@/components/site/pilot"
+import { Portfolio } from "@/components/site/portfolio"
+import { Services } from "@/components/site/services"
+import { SiteFooter, WhatsAppFab } from "@/components/site/site-footer"
+import { SiteHeader } from "@/components/site/site-header"
 
 export default function Page() {
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
-      </div>
-    </div>
+    <>
+      <SiteHeader />
+      <main>
+        <Hero />
+        <Marquee />
+        <About />
+        <Portfolio />
+        <Fleet />
+        <Services />
+        <Packages />
+        <Conditions />
+        <Pilot />
+        <Contact />
+      </main>
+      <SiteFooter />
+      <WhatsAppFab />
+    </>
   )
 }
