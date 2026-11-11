@@ -16,27 +16,19 @@ Abra http://localhost:3000.
 
 ## Onde editar
 
-| O quê | Arquivo |
-| --- | --- |
-| Preços, serviços, pacotes, condições, contatos (WhatsApp, Instagram, e-mail) | `lib/site.ts` |
-| Fotos do portfólio e do topo | `assets/photos/` (usadas em `components/site/portfolio.tsx` e `hero.tsx`) |
-| Logo | `assets/logo-besouro-drone.webp` (e a versão sem fundo `logo-besouro-drone-transparente.webp`) |
-| Cores e fontes | `app/globals.css` e `app/layout.tsx` |
-| Cada seção da página | `components/site/*.tsx` |
+| O quê                                                                        | Arquivo                                                                                        |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Preços, serviços, pacotes, condições, contatos (WhatsApp, Instagram, e-mail) | `lib/site.ts`                                                                                  |
+| Fotos do portfólio e do topo                                                 | `assets/photos/` (usadas em `components/site/portfolio.tsx` e `hero.tsx`)                      |
+| Logo                                                                         | `assets/logo-besouro-drone.webp` (e a versão sem fundo `logo-besouro-drone-transparente.webp`) |
+| Cores e fontes                                                               | `app/globals.css` e `app/layout.tsx`                                                           |
+| Cada seção da página                                                         | `components/site/*.tsx`                                                                        |
 
 ## Foto do Cesar Augusto
 
-A seção "Quem pilota" (`components/site/pilot.tsx`) tem um espaço reservado para a foto.
-Quando a foto estiver pronta (de preferência vertical, proporção 4:5):
-
-1. Salve em `assets/cesar-augusto.jpg`.
-2. Em `pilot.tsx`, importe `import cesar from "@/assets/cesar-augusto.jpg"` e troque o
-   conteúdo de `PhotoPlaceholder` por:
-
-```tsx
-<Image src={cesar} alt="Cesar Augusto, piloto da Besouro Drone" fill placeholder="blur"
-  sizes="(min-width: 1024px) 28rem, 100vw" className="object-cover" />
-```
+A foto da seção "Quem pilota" (`components/site/pilot.tsx`) fica em
+`assets/cesar-augusto.webp`, exibida em moldura vertical 3:4. Para trocar, substitua o
+arquivo mantendo o mesmo nome (de preferência uma foto vertical com o rosto na metade de cima).
 
 O texto de apresentação do Cesar também está em `pilot.tsx`. Revise e complemente com a história dele.
 

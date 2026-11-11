@@ -48,7 +48,7 @@ export function Contact() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-4 md:grid-cols-3">
+        <div className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {channels.map(
             ({ icon: Icon, label, value, href, external, primary }) => (
               <a
@@ -58,7 +58,7 @@ export function Contact() {
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
                 className={cn(
-                  "reveal group flex min-h-48 flex-col justify-between gap-10 rounded-2xl border p-7 transition-[translate,border-color,background-color] duration-300 hover:-translate-y-1",
+                  "reveal group flex min-h-48 flex-col justify-between gap-10 rounded-2xl border p-7 transition-[translate,border-color,background-color] duration-300 hover:-translate-y-1 md:last:col-span-2 xl:last:col-span-1",
                   primary
                     ? "border-primary bg-primary text-primary-foreground"
                     : "border-border bg-card/60 hover:border-primary/60"

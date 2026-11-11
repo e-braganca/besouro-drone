@@ -1,5 +1,7 @@
-import { Camera, Check, ShieldCheck } from "lucide-react"
+import Image from "next/image"
+import { Check, ShieldCheck } from "lucide-react"
 
+import cesar from "@/assets/cesar-augusto.webp"
 import { Eyebrow } from "@/components/site/section-heading"
 import { Viewfinder } from "@/components/site/viewfinder"
 
@@ -10,26 +12,31 @@ const compliance = [
   "Seguro, quando exigido",
 ]
 
-/**
- * Espaço reservado para a foto do Cesar.
- * Quando a foto estiver pronta: salve em `assets/cesar-augusto.jpg`, importe
- * (`import cesar from "@/assets/cesar-augusto.jpg"`) e troque este bloco por
- * <Image src={cesar} alt="Cesar Augusto, piloto da Besouro Drone" fill placeholder="blur"
- *   sizes="(min-width: 1024px) 28rem, 100vw" className="object-cover" />
- */
-function PhotoPlaceholder() {
+/** Foto do Cesar em moldura de visor. Para trocar, substitua `assets/cesar-augusto.webp`. */
+function PilotPhoto() {
   return (
-    <figure className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl border border-dashed border-primary/45 bg-background/70">
-      <div aria-hidden className="flight-grid absolute inset-0 opacity-70" />
+    <figure className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden rounded-2xl bg-background ring-1 ring-primary/30">
+      <Image
+        src={cesar}
+        alt="Cesar Augusto segurando o controle do drone no alto de uma serra, ao pôr do sol"
+        fill
+        placeholder="blur"
+        sizes="(min-width: 448px) 28rem, 100vw"
+        className="object-cover"
+      />
       <div
         aria-hidden
-        className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-primary/10 to-transparent"
+        className="absolute inset-x-0 top-0 h-28 bg-linear-to-b from-black/55 to-transparent"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-black/75 to-transparent"
       />
       <Viewfinder className="inset-5" />
 
       <div
         aria-hidden
-        className="absolute inset-x-9 top-9 flex justify-between font-mono text-[11px] tracking-[0.2em] text-muted-foreground uppercase"
+        className="absolute inset-x-9 top-9 flex justify-between font-mono text-[11px] tracking-[0.2em] text-white/85 uppercase"
       >
         <span className="flex items-center gap-2">
           <span className="size-1.5 rounded-full bg-red-500 motion-safe:animate-blink" />
@@ -38,21 +45,9 @@ function PhotoPlaceholder() {
         <span>Piloto 01</span>
       </div>
 
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-10 text-center">
-        <div className="flex size-24 items-center justify-center rounded-full border border-primary/40 bg-primary/10">
-          <Camera className="size-9 text-primary" />
-        </div>
-        <p className="font-display text-2xl leading-none font-bold uppercase italic">
-          Foto de Cesar Augusto
-        </p>
-        <p className="font-mono text-[11px] tracking-[0.15em] text-muted-foreground uppercase">
-          Espaço reservado · proporção 4:5
-        </p>
-      </div>
-
-      <figcaption className="absolute inset-x-9 bottom-9 flex justify-between font-mono text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
+      <figcaption className="absolute inset-x-9 bottom-9 flex justify-between font-mono text-[11px] tracking-[0.2em] text-white/85 uppercase">
         <span>Cesar Augusto</span>
-        <span>ANAC</span>
+        <span className="text-primary">ANAC</span>
       </figcaption>
     </figure>
   )
@@ -67,7 +62,7 @@ export function Pilot() {
       <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-32">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="reveal lg:col-span-5">
-            <PhotoPlaceholder />
+            <PilotPhoto />
           </div>
 
           <div className="reveal lg:col-span-7">
